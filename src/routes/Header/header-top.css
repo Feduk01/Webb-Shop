@@ -1,0 +1,95 @@
+.header-top-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: #E5A124 ;
+    align-items: center;
+    padding: 1.5em 4em;
+    width: 100%;
+}
+
+.header-bot-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: #DE7D23 ;
+    align-items: center;
+    padding: 2.8em 4em;
+    width: 100%;
+}
+
+.header-container{
+    width: 100%;
+}
+
+.Logo{
+    width: 100%;
+}
+
+.Basket{
+    width: 100%;
+}
+
+
+.header-bot-btn{
+    display: flex;
+    gap: 3em;
+}
+
+.header-bot-btn > button {
+    padding: 1em;
+    min-width: 7em;
+    background-color: #DE7D23;
+    border: 3px solid white;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.5em;
+}
+
+.header-bot-container > input{ 
+    padding: 0.5em;
+    border-radius: 0.5em;
+    font-weight:400;
+    border: none;
+    font-size: large;
+    width: 40vw;
+}
+
+@media (max-width: 780px)  {
+    .header-bot-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1.4em 4em;
+
+    }
+    
+    .header-bot-btn {
+        display: flex;
+        gap: 10px; /* Расстояние между элементами внутри контейнера */
+        width: 100%; /* Заставляет контейнер кнопок занимать всю ширину */
+    }
+    
+    .header-bot-btn button {
+        width: 100%;
+    }
+    
+    .header-bot-container > input {
+        margin-top: 10px;
+        width: 100%;
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 530px)  {
+    
+    .header-top-container{
+        gap: 60px
+    }
+}
+@media (max-width: 450px)  {
+    
+    .header-bot-container, .header-top-container{
+        padding: 1.5em 2em;
+    }
+}
+
+
