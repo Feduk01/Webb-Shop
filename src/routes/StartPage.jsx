@@ -1,5 +1,6 @@
 import {getProduct} from '../config/crud.js'
 import {useStore} from '../data/store.js'
+import ProductCard from './Products/ProductCard.jsx'
 
 const StartPage = () => {
     
@@ -15,18 +16,9 @@ const StartPage = () => {
 
     return(
         <div>
-            <h2>
-                Our Products
-            </h2> 
-
             <button onClick={handleGetProducts}>get product</button>
             {products.map(product=> (
-                 <div >
-                 <div>{product.name}</div>
-                 <div>{product.category}</div>
-                 <div>{product.price}</div>
-                 <img src={product.image} alt="" />
-             </div>
+                 <ProductCard product={product} key={product.id}/>
             ))}
 
         </div>
