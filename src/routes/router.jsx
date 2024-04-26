@@ -1,7 +1,7 @@
 import { createHashRouter } from 'react-router-dom'
 import Root from './Root.jsx'
 import Admin from './Admin.jsx'
-import StartPage from './StartPage.jsx';
+import StartPage from './Products/StartPage.jsx';
 import LandingPage from './LandingPage.jsx'
 
 const router = createHashRouter([

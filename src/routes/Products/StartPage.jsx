@@ -1,6 +1,6 @@
-import {getProduct} from '../config/crud.js'
-import {useStore} from '../data/store.js'
-import ProductCard from './Products/ProductCard.jsx'
+import {getProduct} from '../../config/crud.js'
+import {useStore} from '../../data/store.js'
+import ProductCard from './ProductCard.jsx'
 
 const StartPage = () => {
     
@@ -17,10 +17,12 @@ const StartPage = () => {
     return(
         <div>
             <button onClick={handleGetProducts}>get product</button>
-            {products.map(product=> (
-                 <ProductCard product={product} key={product.id}/>
-            ))}
+            <section className='product-list'>
+                {products.map(product=> (
+                    <ProductCard product={product} key={product.id}/>
+                ))}
 
+            </section>
         </div>
 
     )

@@ -1,31 +1,31 @@
-.header-top-container{
+.header-top-container,.header-bot-container{
     display: flex;
     justify-content: space-between;
     background-color: #E5A124 ;
     align-items: center;
-    padding: 1.5em 4em;
+    padding: 1em 4em;
     width: 100%;
+    
 }
 
 .header-bot-container{
-    display: flex;
-    justify-content: space-between;
     background-color: #DE7D23 ;
-    align-items: center;
-    padding: 2.8em 4em;
-    width: 100%;
+    padding: 1em 4em;
+    
 }
 
 .header-container{
+    position: sticky;
+    top:0;
     width: 100%;
 }
 
 .Logo{
-    width: 100%;
+    width: 70%;
 }
 
 .Basket{
-    width: 100%;
+    width: 70%;
 }
 
 
@@ -35,7 +35,7 @@
 }
 
 .header-bot-btn > button {
-    padding: 1em;
+    padding: 0.5em;
     min-width: 7em;
     background-color: #DE7D23;
     border: 3px solid white;
@@ -45,7 +45,7 @@
 }
 
 .header-bot-container > input{ 
-    padding: 0.5em;
+    padding: 0.4em;
     border-radius: 0.5em;
     font-weight:400;
     border: none;
@@ -58,7 +58,6 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        padding: 1.4em 4em;
 
     }
     
@@ -84,11 +83,16 @@
     .header-top-container{
         gap: 60px
     }
+
+    .Logo, .Basket{
+        width: 100%;
+    }
+    
 }
 @media (max-width: 450px)  {
     
     .header-bot-container, .header-top-container{
-        padding: 1.5em 2em;
+        padding: 1em 2em;
     }
 }
 

@@ -1,6 +1,6 @@
 import {NavLink, Outlet} from "react-router-dom"
 import Header from "./Header/Header.jsx"
-import StartPage from './StartPage.jsx'
+import StartPage from './Products/StartPage.jsx'
 
 function LandingPage(){
 	return(
