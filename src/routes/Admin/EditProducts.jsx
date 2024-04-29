@@ -1,8 +1,9 @@
 import {getProduct} from '../../config/crud.js'
 import {useStore} from '../../data/store.js'
-import ProductCard from '../Products/ProductCard.jsx'
+import EditProductCard from './EditProductCard.jsx'
 import { useEffect } from 'react';
 import AddForm from './AddForm.jsx'
+
 function EditProducts(){
     const {products, setProducts} = useStore(state => ({
         products: state.products,
@@ -24,7 +25,7 @@ function EditProducts(){
             <section className="edit-product-container">
                 <AddForm />
                 {products.map(product=> (
-                    <ProductCard product={product} key={product.key}/>
+                    <EditProductCard product={product} key={product.key}/>
                 ))}
 
             </section>

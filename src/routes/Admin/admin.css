@@ -1,5 +1,5 @@
-.admin-page-container{
-    background-color: #84B3E0;
+.admin-page-container {
+    background-color: #84b3e0;
     height: 100vh;
     padding: 10em;
     display: flex;
@@ -7,12 +7,11 @@
     align-items: center;
 }
 
-
-.login-container{
+.login-container {
     display: flex;
     flex-direction: column;
     padding: 1.5em;
-    background-color: #E5A124;
+    background-color: #e5a124;
     width: 50%;
     height: 60vh;
     justify-content: center;
@@ -20,59 +19,55 @@
     border-radius: 10px;
 }
 
-.row1, .row2{
+.row1,
+.row2 {
     padding: 1em;
     display: flex;
     flex-direction: column;
 }
 
-.login-container label{
+.login-container label {
     color: white;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.login-container input{
+.login-container input {
     padding: 0.5em;
     border-radius: 10px;
     border: none;
 }
 
-
 .login-container button {
     padding: 1em;
-  }
+}
 
-  .login-container > .top-corner button{
+.login-container > .top-corner button {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+}
 
-  }
-
-@media (max-width: 700px)  {
-    
-    .login-container{
-
+@media (max-width: 700px) {
+    .login-container {
         width: 100%;
-        
     }
 }
 /* EDIT-PRODUCT-PAGE*/
 
-.edit-product-page-container{
-    background-color: #84B3E0;
+.edit-product-page-container {
+    background-color: #84b3e0;
     padding: 1em;
     display: flex;
     justify-content: center;
 }
 
-.edit-product-container{
+.edit-product-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 1em 0.7em;
-    background-color: #E5A124;
+    background-color: #e5a124;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -83,7 +78,6 @@
 
 .form-container {
     display: flex;
-    flex-wrap: wrap;
     margin: 1em 0 2em 0;
     justify-content: center;
     width: 100%;
@@ -101,7 +95,7 @@
 
 .form-column {
     display: flex;
-    justify-content: space-around;
+
     flex-wrap: wrap;
     gap: 0.4em;
 }
@@ -112,22 +106,21 @@
     gap: 0.4em;
 }
 
-.form-column2 button, .form-container input {
+.form-column2 button,
+.form-container input {
     padding: 0.5em;
     border: 2px solid black;
     background-color: white;
     color: black;
     font-weight: 600;
-
-
 }
 
-.form-column input {
-    min-width: 100%;
-    padding: 0.6em;
-}
+.form-column input,
 .form-column2 input {
     min-width: 100%;
     padding: 0.6em;
 }
 
+.form-column input {
+    width: 19vw;
+}

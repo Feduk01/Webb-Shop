@@ -1,7 +1,11 @@
-import { collection, getDocs} from 'firebase/firestore/lite'
+import { collection, getDocs, addDoc, deleteDoc, doc} from 'firebase/firestore/lite'
 import { db } from './firebase.js'
 
+
 const collectionName = 'Webb-Shop'
+const collectionRef = collection(db, collectionName)
+
+
 
 
 async function getProduct(){
@@ -13,14 +17,24 @@ async function getProduct(){
 
     const productList = productSnapshot.docs.map(doc => withKey(doc))
     return productList
-    
-    function withKey(doc) {
-    let o = doc.data()
-    o.key = doc.id
-    return o
+        
 }
 
+function withKey(doc) {
+let o = doc.data()
+o.key = doc.id
+return o
+}
+
+async function addProduct(product){
+    await addDoc(collectionRef, product)
+}
+
+async function deleteProduct(key) {
+    const docRef = doc(collectionRef, key)
+    deleteDoc(docRef)
 }
 
 
-export {getProduct}
+
+export {getProduct, addProduct, db, deleteProduct}

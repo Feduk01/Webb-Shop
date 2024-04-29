@@ -7,6 +7,7 @@
     margin-right: 10px;
     background-color: white;
     border-radius: 0.3em;
+    position: relative;
 }
 
 
@@ -48,6 +49,18 @@
     max-width: 4em;
     border-radius: 0.3em
 }
+
+/* Edit Product Card */
+.product-card-container > .close{
+    width: 8%;
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+/*  */
 
 .product-list{
     display: flex;

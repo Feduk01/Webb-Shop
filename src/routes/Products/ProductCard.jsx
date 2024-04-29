@@ -1,5 +1,5 @@
 import './product.css'
-import {useStore} from '../../data/store'
+
 
 function ProductCard({product}) {
 
