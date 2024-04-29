@@ -8,9 +8,7 @@ function LandingPage(){
 			<div className="wrapper">
 			<Header/>
 				<nav>
-					<NavLink to="/"> Start </NavLink>
 					<NavLink to="/admin"> Gå till Admin </NavLink>
-					<NavLink to="/startpage">Start Page</NavLink>
 			    </nav>
 				<StartPage />
 			</div>

@@ -1,8 +1,9 @@
 import { createHashRouter } from 'react-router-dom'
 import Root from './Root.jsx'
-import Admin from './Admin.jsx'
+import Admin from './Admin/Admin.jsx'
 import StartPage from './Products/StartPage.jsx';
 import LandingPage from './LandingPage.jsx'
+import EditProducts from './Admin/EditProducts.jsx'
 
 const router = createHashRouter([
 	{
@@ -28,6 +29,10 @@ const router = createHashRouter([
 			{
 				path: '/',
 				element: <LandingPage />
+			},
+			{
+				path: '/product-edit',
+				element: <EditProducts />
 			}
 		]
 	},

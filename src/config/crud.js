@@ -13,12 +13,13 @@ async function getProduct(){
 
     const productList = productSnapshot.docs.map(doc => withKey(doc))
     return productList
-}
-
-function withKey(doc) {
+    
+    function withKey(doc) {
     let o = doc.data()
     o.key = doc.id
     return o
+}
+
 }
 
 

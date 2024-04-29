@@ -1,12 +1,10 @@
 import {getProduct} from '../../config/crud.js'
 import {useStore} from '../../data/store.js'
-import ProductCard from './ProductCard.jsx'
+import ProductCard from '../Products/ProductCard.jsx'
 import { useEffect } from 'react';
-
-
-const StartPage = () => {
-    
-   const {products, setProducts} = useStore(state => ({
+import AddForm from './AddForm.jsx'
+function EditProducts(){
+    const {products, setProducts} = useStore(state => ({
         products: state.products,
         setProducts: state.setProducts
    }))
@@ -21,20 +19,18 @@ const StartPage = () => {
     fetchProducts();
 }, []);
 
-
     return(
-        <div>
-            <section className='product-list'>
+        <div className="edit-product-page-container">
+            <section className="edit-product-container">
+                <AddForm />
                 {products.map(product=> (
                     <ProductCard product={product} key={product.key}/>
                 ))}
 
             </section>
+            
         </div>
-
     )
 }
 
-
-
-export default StartPage
+export default EditProducts
