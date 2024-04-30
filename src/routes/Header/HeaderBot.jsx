@@ -1,5 +1,7 @@
 import {useState} from 'react'
-function DropDown ({onSelectCategory}) {
+import {useStore} from '../../data/store.js'
+
+function DropDownCategory ({onSelectCategory}) {
     return(
         <div className="dropdownCategory">
             <ul className='ul-container'>
@@ -14,20 +16,35 @@ function DropDown ({onSelectCategory}) {
     )
 }
 
-function HeaderBot({onCategoryChange }){
+function DropDownFilter ({onSelectFilter}){
+    return(
+        <div className="dropdownFilter">
+            <ul className='ul-container'>
+                <li onClick={() => onSelectFilter('Price')}>Pris</li>
+                <li onClick={() => onSelectFilter('Alphabet')}>Alfabet A-Ö</li>
+            </ul>
+        </div>
+    )
+}
 
-    const [showDropdown, setShowDropdown] = useState(false);
+function HeaderBot(){
+
+    const [showDropdownCategory, setShowDropdownCategory] = useState(false);
+    const [showDropdownFilter, setShowDropdownFilter] = useState(false);
+    const {setSelectedCategory,setSelectedFilter, setSearchedProduct} = useStore(state =>({
+        setSelectedFilter: state.setSelectedFilter,
+        setSelectedCategory: state.setSelectedCategory,
+        setSearchedProduct: state.setSearchedProduct
+    }));
     return(
        <section className="header-bot-container">
             <div className="header-bot-btn">
-                    <button>Filter</button>
-                    <button className='category' onClick={() => setShowDropdown(!showDropdown)}>Kategori</button>
-                {showDropdown && <DropDown onSelectCategory={(category) => {
-                    onCategoryChange(category);
-                    setShowDropdown(false);
-                }} />}
+                    <button className='filter' onClick={() => setShowDropdownFilter(!showDropdownFilter)}>Filter</button>
+                    {showDropdownFilter && <DropDownFilter onSelectFilter={(filter) =>{setSelectedFilter(filter); setShowDropdownFilter(false) }}/>}
+                    <button className='category' onClick={() => setShowDropdownCategory(!showDropdownCategory)}>Kategori</button>
+                    {showDropdownCategory && <DropDownCategory onSelectCategory={(category) => {setSelectedCategory(category); setShowDropdownCategory(false)}} />}
             </div>
-                <input type="text" placeholder="Hej! Vad letar du efter?" />
+                <input type="text" placeholder="Hej! Vad letar du efter?" onChange={(e) => setSearchedProduct(e.target.value)} />
        </section>
     )
 }

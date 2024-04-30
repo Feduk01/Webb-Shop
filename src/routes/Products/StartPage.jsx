@@ -4,11 +4,14 @@ import ProductCard from './ProductCard.jsx'
 import { useEffect, useState } from 'react';
 
 
-const StartPage = (selectedCategory) => {
+const StartPage = () => {
     
-   const {products, setProducts} = useStore(state => ({
+   const {products, setProducts, selectedCategory, selectedFilter, searchedProduct} = useStore(state => ({
         products: state.products,
-        setProducts: state.setProducts
+        setProducts: state.setProducts,
+        selectedCategory: state.selectedCategory,
+        selectedFilter: state.selectedFilter,
+        searchedProduct: state.searchedProduct
    }))
 
    
@@ -19,15 +22,25 @@ const StartPage = (selectedCategory) => {
     };
 
     fetchProducts();
-}, []);
+    }, 
+    [setProducts]);
 
-const filteredProducts = products.filter(product => product.category === selectedCategory )
+    let filteredProducts = products
+        .filter(product => !selectedCategory || product.category === selectedCategory)
+        .filter(product => product.name.toLowerCase().includes(searchedProduct.toLowerCase()))
+
+    if (selectedFilter === 'Price') {
+        filteredProducts = filteredProducts.sort((a, b) => a.price - b.price);
+    } else if (selectedFilter === 'Alphabet') {
+        filteredProducts = filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+    }
     
-
+    
+    
     return(
         <div>
             <section className='product-list'>
-                {products.map(product=> (
+                {filteredProducts.map(product=> (
                     <ProductCard product={product} key={product.key}/>
                 ))}
 
