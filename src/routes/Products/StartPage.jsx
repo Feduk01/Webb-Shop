@@ -1,10 +1,10 @@
 import {getProduct} from '../../config/crud.js'
 import {useStore} from '../../data/store.js'
 import ProductCard from './ProductCard.jsx'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 
-const StartPage = () => {
+const StartPage = (selectedCategory) => {
     
    const {products, setProducts} = useStore(state => ({
         products: state.products,
@@ -21,6 +21,8 @@ const StartPage = () => {
     fetchProducts();
 }, []);
 
+const filteredProducts = products.filter(product => product.category === selectedCategory )
+    
 
     return(
         <div>

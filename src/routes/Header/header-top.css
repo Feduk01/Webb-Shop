@@ -41,6 +41,7 @@
     color: white;
     font-weight: bold;
     border-radius: 0.5em;
+    cursor: pointer;
 }
 
 .header-bot-container > input {
@@ -61,8 +62,8 @@
 
     .header-bot-btn {
         display: flex;
-        gap: 10px; /* Расстояние между элементами внутри контейнера */
-        width: 100%; /* Заставляет контейнер кнопок занимать всю ширину */
+        gap: 10px;
+        width: 100%;
     }
 
     .header-bot-btn button {
@@ -91,4 +92,36 @@
     .header-top-container {
         padding: 1em 2em;
     }
+}
+
+/* DropDown */
+.category {
+    position: relative;
+}
+.dropdownCategory {
+    position: absolute;
+    top: 95%;
+    left: 12.6rem;
+    max-width: 200px;
+    padding: 5px;
+    border: 1px solid white;
+    color: white;
+    background-color: #e5a124;
+    border-radius: 7px;
+    display: hidden;
+}
+
+.ul-container > * {
+    border-bottom: 1px solid white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.ul-container > li:hover {
+    background-color: #de7d23;
+    color: #ffffff;
+}
+
+.ul-container :last-child {
+    border-bottom: none;
 }
