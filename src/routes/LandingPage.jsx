@@ -8,11 +8,8 @@ function LandingPage(){
 		<div className='container'>
 			<div className="wrapper">
 			<Header/>
-				<nav>
-					<NavLink to="/admin"> Gå till Admin </NavLink>
-			    </nav>
-				<StartPage />
-				<Footer />
+			<StartPage />
+			<Footer />
 			</div>
 		</div>
 

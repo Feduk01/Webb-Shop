@@ -2,6 +2,8 @@ import {getProduct} from '../../config/crud.js'
 import {useStore} from '../../data/store.js'
 import ProductCard from './ProductCard.jsx'
 import { useEffect, useState } from 'react';
+import {NavLink, Outlet} from "react-router-dom"
+
 
 
 const StartPage = () => {
@@ -40,14 +42,22 @@ const StartPage = () => {
     return(
         <div>
             <section className='product-list'>
-                {filteredProducts.map(product=> (
-                    <ProductCard product={product} key={product.key}/>
-                ))}
-
+                {filteredProducts.length > 0 ? (
+                    filteredProducts.map(product => (
+                        <ProductCard product={product} key={product.key} />
+                    ))
+                ) : (
+                    <div className='no-product-container'>
+                        <h3 className="no-products">Tyvärr, vi kunde inte hitta någon produkt som matchar din sökning!</h3>
+                        <h3 className="no-products">Logga in som Admin och lägg till din önskade produkt!</h3>
+                        <NavLink to="/admin"><button className='no-products-btn'>Logga in</button></NavLink>
+                        
+                    </div>
+                    
+                )}
             </section>
         </div>
-
-    )
+    );
 }
 
 

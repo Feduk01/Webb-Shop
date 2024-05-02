@@ -20,11 +20,21 @@
     z-index: 1000;
 }
 
+.right-side-container {
+    display: flex;
+    gap: 2em;
+}
+
 .Logo {
     width: 70%;
 }
 
 .Basket {
+    width: 70%;
+}
+
+.Login {
+    margin-top: 0.3em;
     width: 70%;
 }
 
@@ -113,8 +123,8 @@
         gap: 60px;
     }
 
-    .Logo,
-    .Basket {
+    .Basket,
+    .Logo {
         width: 100%;
     }
 }
