@@ -1,0 +1,57 @@
+.card {
+    transition: 0.5s;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ebebeb;
+}
+
+.closeShopping {
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+.card-mid,
+.checkout {
+    display: flex;
+    flex-direction: column;
+}
+
+.listCard {
+    border-bottom: 2px solid black;
+    margin-bottom: 0.5em;
+}
+
+.remove {
+    width: 9em;
+    padding: 0.4em;
+    align-self: flex-end;
+    font-weight: 700;
+    border: 3px solid black;
+    background-color: transparent;
+}
+
+.total {
+    align-self: flex-end;
+    font-weight: 700;
+}
+
+.kassa-btn {
+    padding: 0.4em;
+    border: 0;
+    background-color: #84b3e0;
+    color: white;
+    font-weight: 700;
+}
+
+.checkout {
+    background-color: #ebebeb;
+}
+
+.card-top,
+.card-mid,
+.checkout {
+    padding: 0.5em;
+}

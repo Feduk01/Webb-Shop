@@ -6,6 +6,7 @@ import {NavLink, Outlet} from "react-router-dom"
 
 
 
+
 const StartPage = () => {
     
    const {products, setProducts, selectedCategory, selectedFilter, searchedProduct} = useStore(state => ({
