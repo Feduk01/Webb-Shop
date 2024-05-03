@@ -1,0 +1,140 @@
+.card {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    transition: 0.5s;
+    z-index: 100;
+    width: 100%;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ebebeb;
+}
+
+.closeShopping {
+    background-color: transparent;
+    border: none;
+}
+
+.card-mid,
+.checkout {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-mid {
+    background-color: white;
+}
+
+.listCard {
+    margin-bottom: 0.5em;
+}
+
+.card-item {
+    padding: 2em 0 0.5em 0;
+    /* border: 1px dotted green; */
+    border-bottom: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.remove-item {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    width: 7em;
+}
+
+.item-info p {
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+}
+
+.value-container {
+    display: flex;
+    /* border: 1px dotted green; */
+    align-items: center;
+}
+
+.value {
+    border: 1px solid black;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    font-weight: 500;
+}
+
+.addValue,
+.reduceValue {
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+}
+
+.card-item img {
+    width: 100%;
+}
+
+.summa {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.item-price :first-child,
+.total-item-price :first-child {
+    margin-bottom: 0.2em;
+}
+
+.remove {
+    width: 9em;
+    padding: 0.4em;
+    align-self: flex-end;
+    font-weight: 700;
+    border: 3px solid black;
+    background-color: transparent;
+}
+
+.total {
+    align-self: flex-end;
+    font-weight: 700;
+    padding: 0.8em 0;
+}
+
+.kassa-btn {
+    padding: 0.4em;
+    border: 0;
+    background-color: #84b3e0;
+    color: white;
+    font-weight: 700;
+}
+
+.card-top,
+.card-mid,
+.checkout {
+    padding: 0.5em;
+}
+.checkout {
+    background-color: #ebebeb;
+}
+
+.card.active {
+    left: calc(100% - 302px);
+}

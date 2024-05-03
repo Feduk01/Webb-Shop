@@ -1,8 +1,13 @@
 import './product.css'
+import { useStore } from '../../data/store.js'
 
 
 function ProductCard({product}) {
+    const addProductToCart = useStore(state => state.addProductToCart)
 
+    const handleAddToCart = () => {
+        addProductToCart(product)
+    }
 
    
     return(
@@ -15,7 +20,7 @@ function ProductCard({product}) {
                     <h3 className="product-name">{product.name}</h3>
                     <p className="product-price">{product.price}:-</p>
                 </div>
-                <button className="product-btn">Köp</button>
+                <button className="product-btn" onClick={handleAddToCart}>Köp</button>
             </div>
         </section>
     )
