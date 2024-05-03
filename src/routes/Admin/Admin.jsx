@@ -1,24 +1,49 @@
-import './admin.css'
-import {NavLink} from "react-router-dom"
+import React, { useState } from 'react';
+import './admin.css';
+import { NavLink } from "react-router-dom";
 
-const Admin = () => (
-	<div className='admin-page-container'>
-       
-        <section className="login-container">
-            <div className='top-corner'>
-            <button><NavLink to="/">back</NavLink></button>
-            </div>
-            <div className='row1'>
-                <label htmlFor="1">Username</label>
-                <input id='1' type="text" />
-            </div>
-            <div className='row2'>
-                <label htmlFor="2">Password</label>
-                <input id='2' type="password" />
-            </div>
-            <button><NavLink to="/product-edit">Login</NavLink></button>
-        </section>
-    </div>
-)
+const Admin = () => {
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-export default Admin
+    const handleLogin = (e) => {
+        e.preventDefault()
+        if (username === 'admin' && password === 'password') {
+            setError('')
+            setIsLoggedIn(true)
+        } else {
+            setError('Incorrect username or password!')
+        }
+    }
+
+    return (
+        <div className='admin-page-container'>
+            {!isLoggedIn ? (
+                <section className="login-container">
+                    <div className='top-corner'>
+                        <button><NavLink to="/">Back</NavLink></button>
+                    </div>
+                    <form onSubmit={handleLogin}>
+                        <div className='row1'>
+                            <label htmlFor="username">Username</label>
+                            <input id='username' type="text" value={username} onChange={e => setUsername(e.target.value)} />
+                        </div>
+                        <div className='row2'>
+                            <label htmlFor="password">Password</label>
+                            <input id='password' type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                        </div>
+                        <button type="submit" className='Loggin-btn'>Login</button>
+                        {error && <div className="error-message">{error}</div>}
+                    </form>
+                </section>
+                
+            ) : (
+                <button className="redirect-link"><NavLink to="/product-edit" >Go to Admin</NavLink></button>
+            )}
+        </div>
+    );
+}
+
+export default Admin;

@@ -9,11 +9,14 @@ function SideCart({isActive, closeCart}){
         clearCart: state.clearCart,
     }));
 
-    const cartClass = isActive ? "card active" : "card"
+    const cartClass = isActive ? "card active " : "card"
+    const overlayClass = isActive ? "overlay active" : "overlay"; 
     const total = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0)   
 
 
     return(
+        <>
+        <div className={overlayClass} onClick={closeCart}></div>
         <section className={cartClass}>
 
             <div className="card-top">
@@ -38,6 +41,7 @@ function SideCart({isActive, closeCart}){
             </div>
 
         </section>
+        </>
     )
 }
 

@@ -17,6 +17,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    position: relative;
 }
 
 .row1,
@@ -38,14 +39,54 @@
     border: none;
 }
 
-.login-container button {
-    padding: 1em;
+.Loggin-btn {
+    background-color: transparent;
+    border: 3px solid white;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 0.5em;
+    cursor: pointer;
+    padding: 0.6em;
+    margin-left: 4em;
+    margin-top: 1em;
+    width: 7em;
 }
 
-.login-container > .top-corner button {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+.top-corner button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 0.5em;
+    min-width: 7em;
+    background-color: transparent;
+    border: 3px solid white;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.redirect-link {
+    border-radius: 0.5em;
+    border: 5px solid white;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    padding: 1em;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+.redirect-link:hover {
+    background-color: #e5a124;
 }
 
 @media (max-width: 700px) {

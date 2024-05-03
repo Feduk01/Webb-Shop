@@ -4,7 +4,7 @@
     left: 100%;
     transition: 0.5s;
     z-index: 100;
-    width: 100%;
+    width: 34.7vw;
 }
 
 .card-top {
@@ -16,6 +16,7 @@
 .closeShopping {
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .card-mid,
@@ -25,7 +26,12 @@
 }
 
 .card-mid {
+    display: flex;
+    flex-direction: column;
     background-color: white;
+    padding: 0.5em;
+    overflow-y: auto; /* Включает прокрутку, если контент выходит за пределы высоты элемента */
+    max-height: 70vh;
 }
 
 .listCard {
@@ -48,6 +54,7 @@
     right: 0;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .item-info {
@@ -84,6 +91,7 @@
     background-color: transparent;
     border: none;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .card-item img {
@@ -110,6 +118,7 @@
     font-weight: 700;
     border: 3px solid black;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .total {
@@ -124,6 +133,7 @@
     background-color: #84b3e0;
     color: white;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .card-top,
@@ -136,5 +146,26 @@
 }
 
 .card.active {
-    left: calc(100% - 302px);
+    left: 65%;
+}
+.overlay {
+    visibility: hidden; /* Скрыт по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный цвет */
+    z-index: 50; /* Z-index меньше чем у корзины, чтобы оверлей был под ней */
+}
+
+.overlay.active {
+    visibility: visible; /* Показывать оверлей когда корзина активна */
+}
+
+@media (max-width: 600px) {
+    .card.active {
+        width: 100%;
+        left: 0;
+    }
 }

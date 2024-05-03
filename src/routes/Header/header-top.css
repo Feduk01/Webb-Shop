@@ -31,6 +31,26 @@
 
 .Basket {
     width: 70%;
+    cursor: pointer;
+    position: relative;
+}
+.basket-container {
+    position: relative;
+    display: inline-block;
+}
+.quantity {
+    background-color: #875ddb;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: absolute;
+    top: 0px;
+    left: 55%;
+    padding: 2px 8px;
+    height: 55%;
 }
 
 .Login {
