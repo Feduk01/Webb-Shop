@@ -1,5 +1,5 @@
 import './sideCart.css'
-import cardClose from './cardClose.svg'
+import cardClose from '../../../../public/cardClose.svg'
 import {useStore} from '../../../data/store'
 
 function SideCartItem({item}) {
