@@ -106,12 +106,12 @@
         font-size: 100%;
     }
 
-    .dropdownFilter {
-        left: 50%; /* Center the dropdown */
-        transform: translateX(1%); /* Center align the dropdown */
-        top: 100%; /* Position right below the button */
-        width: 100%; /* Allow the dropdown to fit the content or specific width */
-    }
+    /* .dropdownFilter {
+        left: 50%;
+        transform: translateX(1%);
+        top: 100%;
+        width: 100%;
+    } */
     .dropdownCategory {
         left: 50%; /* Center the dropdown */
         transform: translateX(90%); /* Center align the dropdown */
