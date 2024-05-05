@@ -108,7 +108,7 @@
 
     .dropdownFilter {
         left: 50%;
-        transform: translateX(1%);
+        transform: translateX(0%);
         top: 100%;
         width: 100%;
     }
@@ -161,6 +161,16 @@
     .header-bot-container,
     .header-top-container {
         padding: 1em 2em;
+    }
+}
+
+@media (max-width: 418px) {
+    .dropdownCategory {
+        width: 43%;
+    }
+    .dropdownFilter {
+        width: 50%;
+        transform: translateX(-16%);
     }
 }
 
