@@ -114,7 +114,7 @@
     }
     .dropdownCategory {
         left: 50%; /* Center the dropdown */
-        transform: translateX(91%); /* 1a Center align the dropdown */
+        /* transform: translateX(91%); */
         top: 100%; /* Position right below the button */
         width: 100%; /* Allow the dropdown to fit the content or specific width */
     }
