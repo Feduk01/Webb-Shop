@@ -108,7 +108,7 @@
 
     .dropdownFilter {
         left: 50%; /* Center the dropdown */
-        transform: translateX(0%); /* Center align the dropdown */
+        transform: translateX(1%); /* Center align the dropdown */
         top: 100%; /* Position right below the button */
         width: 100%; /* Allow the dropdown to fit the content or specific width */
     }
