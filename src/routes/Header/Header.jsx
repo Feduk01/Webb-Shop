@@ -4,7 +4,7 @@ import HeaderBot from "./HeaderBot"
 
 function Header(){
     return(
-        <header className='header-container'>
+        <header className='header-container' style={{backgroundColor: 'red'}}>
             <HeaderTop />
             <HeaderBot />
         </header>
