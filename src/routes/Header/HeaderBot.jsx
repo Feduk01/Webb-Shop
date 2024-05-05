@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import {useStore} from '../../data/store.js'
+import './header-top.css'
 
 function DropDownCategory ({onSelectCategory}) {
     return(

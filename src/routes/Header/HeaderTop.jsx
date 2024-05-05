@@ -1,8 +1,9 @@
-import Logo from './Logo.svg'
-import Basket from './Vector.svg'
+import Logo from '../../../public/Logo.svg'
+import Basket from '../../../public/Vector.svg'
 import SideCart from './SideCart/SideCart'
 import {useState} from 'react'
 import {useStore} from '../../data/store'
+import './header-top.css'
 
 function HeaderTop(){
     const [isActive, setIsActive] = useState(false);

@@ -1,4 +1,3 @@
-import FooterBack from './footerbackground.svg'
 import './footer.css'
 import {adress} from './adress.js'
 

@@ -1,5 +1,5 @@
 import '../Products/product.css'
-import Close from './close.svg'
+import Close from '../../../public/close.svg'
 import {deleteProduct, getProduct} from '../../config/crud.js'
 import {useStore} from '../../data/store.js'
 

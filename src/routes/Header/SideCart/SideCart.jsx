@@ -1,4 +1,4 @@
-import cardClose from './cardClose.svg'
+import cardClose from '../../../../public/cardClose.svg'
 import {useStore} from '../../../data/store.js'
 import './sideCart.css'
 import SideCartItem from './sideCartItem'

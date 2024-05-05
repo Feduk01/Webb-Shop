@@ -1,5 +1,5 @@
 .footer-container {
-    background-image: url("./footerbackground.svg");
+    background-image: url("../../../public/footerbackground.svg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 40vh;
