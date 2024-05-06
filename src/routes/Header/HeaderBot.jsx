@@ -6,6 +6,7 @@ function DropDownCategory ({onSelectCategory}) {
     return(
         <div className="dropdownCategory">
             <ul className='ul-container'>
+                <li onClick={() => onSelectCategory(null)}>Alla kategorier</li>
                 <li onClick={() => onSelectCategory('Vattenpistol')}>Vattenpistol</li>
                 <li onClick={() => onSelectCategory('Sandlåda leksaker')}>Sandlåda leksaker</li>
                 <li onClick={() => onSelectCategory('Flygande leksaker')}>Flygande leksaker</li>
@@ -38,15 +39,15 @@ function HeaderBot(){
         setSearchedProduct: state.setSearchedProduct
     }));
     return(
-       <section className="header-bot-container">
-            <div className="header-bot-btn">
-                    <button className='filter' onClick={() => setShowDropdownFilter(!showDropdownFilter)}>Filter</button>
-                    {showDropdownFilter && <DropDownFilter onSelectFilter={(filter) =>{setSelectedFilter(filter); setShowDropdownFilter(false) }}/>}
-                    <button className='category' onClick={() => setShowDropdownCategory(!showDropdownCategory)}>Kategori</button>
-                    {showDropdownCategory && <DropDownCategory onSelectCategory={(category) => {setSelectedCategory(category); setShowDropdownCategory(false)}} />}
-            </div>
-                <input type="text" placeholder="Hej! Vad letar du efter?" onChange={(e) => setSearchedProduct(e.target.value)} />
-       </section>
+        <section className="header-bot-container">
+        <div className="header-bot-btn">
+                <button className='filter' onClick={() => setShowDropdownFilter(!showDropdownFilter)}>Filter</button>
+                {showDropdownFilter && <DropDownFilter onSelectFilter={(filter) =>{setSelectedFilter(filter); setShowDropdownFilter(false) }}/>}
+                <button className='category' onClick={() => setShowDropdownCategory(!showDropdownCategory)}>Kategori</button>
+                {showDropdownCategory && <DropDownCategory onSelectCategory={(category) => {setSelectedCategory(category); setShowDropdownCategory(false)}} />}
+        </div>
+            <input type="text" placeholder="Hej! Vad letar du efter?" onChange={(e) => setSearchedProduct(e.target.value)} />
+   </section>
     )
 }
 

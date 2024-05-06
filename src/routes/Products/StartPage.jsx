@@ -38,6 +38,10 @@ const StartPage = () => {
         filteredProducts = filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
     }
     
+    if (selectedCategory === null) {
+        filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchedProduct.toLowerCase()));
+    }
+
     
     
     return(
