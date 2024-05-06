@@ -115,6 +115,26 @@
     border-radius: 10px;
 }
 
+.edit-container {
+    height: 422px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-container > *,
+.center > * {
+    margin-bottom: 0.4em;
+}
+
+.center {
+    margin-left: 10.4em;
+}
+.edit-values {
+    padding: 0.5em;
+}
+
 /* FOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORM */
 
 .form-container {

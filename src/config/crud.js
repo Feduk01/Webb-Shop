@@ -1,4 +1,4 @@
-import { collection, getDocs, addDoc, deleteDoc, doc} from 'firebase/firestore/lite'
+import { collection, getDocs, addDoc, deleteDoc, updateDoc, doc} from 'firebase/firestore/lite'
 import { db } from './firebase.js'
 
 
@@ -35,6 +35,11 @@ async function deleteProduct(key) {
     deleteDoc(docRef)
 }
 
+async function editProduct(key, updatedProduct){
+    const docRef = doc(collectionRef, key)
+    await updateDoc(docRef, updatedProduct)
+}
 
 
-export {getProduct, addProduct, db, deleteProduct}
+
+export {getProduct, addProduct, db, deleteProduct, editProduct}
