@@ -29,10 +29,10 @@ function AddForm() {
 
     // Validation function
     function validateFields() {
-        setNameError(!name ? 'Title is required' : '')
-        setCategoryError(!category ? 'Category is required' : '')
-        setPriceError(!price ? 'Price is required' : '')
-        setImageError(!image ? 'Image URL is required' : '')
+        setNameError(!name ? 'Skriv in produktens namn' : '')
+        setCategoryError(!category ? 'Skriv in produktens kategori' : '')
+        setPriceError(!price ? 'Skriv in produktens pris' : '')
+        setImageError(!image ? 'Skriv in bildens URL' : '')
     }
 
 
