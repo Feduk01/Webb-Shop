@@ -6,7 +6,7 @@ function DropDownCategory ({onSelectCategory}) {
     return(
         <div className="dropdownCategory">
             <ul className='ul-container'>
-                <li onClick={() => onSelectCategory(null)}>Alla kategorier</li>
+                <li onClick={() => onSelectCategory('Alla kategorier')}>Alla kategorier</li>
                 <li onClick={() => onSelectCategory('Vattenpistol')}>Vattenpistol</li>
                 <li onClick={() => onSelectCategory('Sandlåda leksaker')}>Sandlåda leksaker</li>
                 <li onClick={() => onSelectCategory('Flygande leksaker')}>Flygande leksaker</li>
@@ -33,10 +33,11 @@ function HeaderBot(){
 
     const [showDropdownCategory, setShowDropdownCategory] = useState(false);
     const [showDropdownFilter, setShowDropdownFilter] = useState(false);
-    const {setSelectedCategory,setSelectedFilter, setSearchedProduct} = useStore(state =>({
+    const {setSelectedCategory,setSelectedFilter, setSearchedProduct, setCategory} = useStore(state =>({
         setSelectedFilter: state.setSelectedFilter,
         setSelectedCategory: state.setSelectedCategory,
-        setSearchedProduct: state.setSearchedProduct
+        setSearchedProduct: state.setSearchedProduct,
+        setCategory: state.setCategory
     }));
     return(
         <section className="header-bot-container">

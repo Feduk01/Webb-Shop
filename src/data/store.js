@@ -10,6 +10,9 @@ const useStore = create(set => ({
     searchedProduct: '',
     // För att lägga till i varukorg
     cartItems: [],
+    allCategories: ['Vattenpistol', 'Sandlåda leksaker', 'Flygande leksaker', 'Badleksaker', 'Utomhusspel', 'Vattenspridare'],
+
+    setCategory: changedCategory => set({ selectedCategory: changedCategory }),
 
     setProducts: newProduct => set(state => ({
         products: newProduct

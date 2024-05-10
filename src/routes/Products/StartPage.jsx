@@ -9,38 +9,41 @@ import {NavLink, Outlet} from "react-router-dom"
 
 const StartPage = () => {
     
-   const {products, setProducts, selectedCategory, selectedFilter, searchedProduct} = useStore(state => ({
+   const {products, setProducts, selectedCategory, selectedFilter, searchedProduct, setCategory} = useStore(state => ({
         products: state.products,
         setProducts: state.setProducts,
         selectedCategory: state.selectedCategory,
         selectedFilter: state.selectedFilter,
-        searchedProduct: state.searchedProduct
+        searchedProduct: state.searchedProduct,
+        setCategory: state.setCategory
    }))
 
    
    useEffect(() => {
     const fetchProducts = async () => {
-        const loadedProducts = await getProduct();
-        setProducts(loadedProducts);
-    };
-
-    fetchProducts();
-    }, 
-    [setProducts]);
-
-    let filteredProducts = products
-        .filter(product => !selectedCategory || product.category === selectedCategory)
-        .filter(product => product.name.toLowerCase().includes(searchedProduct.toLowerCase()))
-
-    if (selectedFilter === 'Price') {
-        filteredProducts = filteredProducts.sort((a, b) => a.price - b.price);
-    } else if (selectedFilter === 'Alphabet') {
-        filteredProducts = filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+        const loadedProducts = await getProduct()
+        setProducts(loadedProducts)
     }
     
-    if (selectedCategory === null) {
-        filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchedProduct.toLowerCase()));
-    }
+    fetchProducts()
+}, 
+    [setProducts, selectedCategory, selectedFilter, searchedProduct]) 
+
+
+    let filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchedProduct.toLowerCase()));
+
+
+    if (selectedCategory && selectedCategory !== "Alla kategorier") {
+    filteredProducts = filteredProducts.filter(product => product.category === selectedCategory);
+}
+
+
+    if (selectedFilter === 'Price') {
+    filteredProducts = filteredProducts.sort((a, b) => a.price - b.price);
+} else if (selectedFilter === 'Alphabet') {
+    filteredProducts = filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+}
+
 
     
     
